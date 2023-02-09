@@ -25,10 +25,10 @@ def main():
 
     #Try and Except
     try:
-        file = open('WorldSeriesWinners.txt', 'r')
-        for string in file:
+        fileRead = open('WorldSeriesWinners.txt', 'r')
+        for string in fileRead:
             list.append(string.rstrip())
-        file.close
+        fileRead.close
         list.insert(1, 'the World Series was not played')
         list.insert(91, 'the World Series was not played')
         for item in list:
