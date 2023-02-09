@@ -18,29 +18,36 @@ def main():
     year = int(1903)
   
     #Initialize "lists"
-    list = []
-    list_2 = []
+    teams = []
+    years_teams = []
     nested_list = []
     years = []
 
     #Try and Except
     try:
+        #Open File
         fileRead = open('WorldSeriesWinners.txt', 'r')
+        #Using a for loop read each line and fill list
         for string in fileRead:
-            list.append(string.rstrip())
+            teams.append(string.rstrip())
+        #Close File
         fileRead.close
-        list.insert(1, 'the World Series was not played')
-        list.insert(91, 'the World Series was not played')
-        for item in list:
+        #Adding the lines when the World Series was not played
+        teams.insert(1, 'the World Series was not played')
+        teams.insert(91, 'the World Series was not played')
+        #Filling nested_list and print it
+        for item in teams:
             nested_list = [year, item]
             year += 1
-            list_2.append(nested_list)
+            #Mark team with '*'
+            years_teams.append(nested_list)
             if item == team:
                 print('*', nested_list)
                 years.append(nested_list[0])
             else:
                 print(' ', nested_list)
         print(f'{"=" * 40}')
+        #Print the results of searching
         print(f'{team} win the World Series {len(years)} times. In {years}')
     
     #Handdle File not Found Error
