@@ -27,7 +27,7 @@ def main():
     try:
         #Open File
         fileRead = open('WorldSeriesWinners.txt', 'r')
-        #Using a for loop read each line and fill list
+        #Read a fileRead and save those values on a list.
         for string in fileRead:
             teams.append(string.rstrip())
         #Close File
